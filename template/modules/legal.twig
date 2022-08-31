@@ -1,0 +1,16 @@
+<section class="legal-alphalion" >
+        <div class="container">
+            <div class="row" data-aos="fade-up">
+                <div class="col-md-12">
+                    <h2 style="font-family: 'Bebas Neue'">{{title}}</h2>
+                    <span>{{acf.top_legal_text}}<br>—-</span>
+                    {% for item in acf.legal_information %}
+                    <h4>{{item.legal_section}}</h4>
+                        {% for info in item.section_paragraphs %}
+                        <p>{{info.paragraphs}}</p>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,21 @@
+<section class="section-steps">
+    <div class="section-count">
+        {% for item in acf.steps %}
+            {% set type = '' %}
+
+            {% if item.type == 'red' %}
+                {% set type = 'bg-danger' %}
+            {% elseif item.type == 'dark' %}
+                {% set type = 'bg-darkStep' %}
+            {% elseif item.type == 'grey' %}
+                {% set type = 'bg-dark' %}
+            {% endif %}
+
+            <div id="{{ item.title_step|replace({' ': ''})|lower }}" class="section-step {{ type }}">
+                <span class="container" data-aos="fade-right" >{{item.title_step}}</span>
+                {% include 'modules/box-step.twig' %}
+            </div>
+        {% endfor %}
+    </div>
+
+</section>

@@ -1,0 +1,87 @@
+{% set title = acf.product.post_title|replace({' ': '-'})|lower %}
+
+<section class="hero">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-6">
+                <div class="content-slider row">
+                    <div class="text text-center d-block d-lg-none">
+                        <h1>{{acf.product.post_title}}</h1>
+                        <div class="reviews d-flex align-items-center justify-content-center text-center">
+                            <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ acf.product.ID }}" style="display: inline-block;"></span>
+                        </div>
+                    </div>
+                    <div class="slider-miniature d-lg-block d-none col-lg-4">
+                        {% for attachment_id in attachment_ids(acf.product.ID) %}
+                            <div class="slide-container" data-image-id="{{attachment_id}}">
+                                <figure>
+                                    <img src="{{ attachment_url( attachment_id ) }}" alt="{{title}}-{{attachment_id}}">
+                                </figure>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="slider-home col-lg-8">
+                        {% for attachment_id in attachment_ids(acf.product.ID) %}
+                            <div class="slide-btn">
+                                <figure>
+                                    <img src="{{ attachment_url( attachment_id ) }}" alt="{{title}}-{{attachment_id}}">
+                                </figure>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="box-free">
+                    <figure>
+                        <img src="{{ acf.shipping_image }}" alt="">
+                    </figure>
+
+                </div>
+            </div>
+            <div class=" col-lg-6">
+                <div class="text text-center">
+                    <p class="d-none d-lg-block">{{ acf.verified_buyer }} <span class="d-block">- {{ acf.name }}</span></p>
+                    <h1 class="d-none d-lg-block">{{ acf.product.post_title }}</h1>
+                    <div class="reviews d-flex align-items-center justify-content-center text-center d-none d-lg-block">
+                        <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ acf.product.ID }}" style="display: inline-block;"></span>
+                    </div>
+                    <h5><strong>{{ acf.description }}</strong></h5>
+                    <ul>
+                        {% for value in acf.features %}
+                            <li>{{ value.item }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="box-price">
+                        <h3>${{ get_product_price(acf.product.ID) }}</h3>
+                        <h4>${{ acf.old_price }}</h4>
+                    </div>
+                    <form action="">
+                        <div class="form-group">
+                            <select id="variation" name="select" class="form-control minimal">
+                                {% for element in get_variations(acf.product.ID) %}
+                                    <option value="{{ element.variation_id }}" data-image-id="{{ element.image_id }}">{{ element.attributes['attribute_choose-superhuman-burn-flavor']}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="input-group form-group quantyty">
+
+                            <button type="button" class="quantity-left-minus" data-type="minus" data-field="">
+                                <span class="icon-arrow-down"></span>
+                            </button>
+
+                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+
+                            <button type="button" class="quantity-right-plus" data-type="plus" data-field="">
+                                <span class="icon-arrow-up"></span>
+                            </button>
+                        </div>
+
+                    </form>
+
+                    <a id="buy" class="btn btn-warning w-100" href="#!">ADD TO CART</a>
+
+                    <p class="d-block d-lg-none mt-3">{{ acf.verified_buyer }} <span class="d-block">- {{ acf.name }}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

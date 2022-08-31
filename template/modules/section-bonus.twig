@@ -1,0 +1,32 @@
+<section class="section-bonus" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 m-auto p-0" data-aos="fade-up" >
+                <div class="contenedor">
+                    <div class="title text-center">
+                        <h2>{{ acf.title }}</h2>
+                    </div>
+                    <div class="content-bonus">
+                        <ol>
+                            {% for element in acf.products %}
+                                <li>
+                                    <div class="content-image">
+                                        <img src="{{ element.image }}" alt="{{ element.product_title }}">
+                                    </div>
+                                    <div class="title-bonus">
+                                        <div class="prices-free">
+                                            <span class="price price--default">${{ element.price }}</span>
+                                            <span class="tag-free">FREE!</span>
+                                        </div>
+                                        <h3>{{ element.product_title }}</h3>
+                                    </div>
+                                    {{ element.content|raw }}
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

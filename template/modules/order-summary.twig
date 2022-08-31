@@ -1,0 +1,32 @@
+<div class="order-summary">
+    <h2>Order Summary</h2>
+    <div class="content-order">
+        {{ do_shortcode(acf.shortcode_summary)|raw }}
+
+        {% if acf_product.free_bonus_items %}
+            <div class="bonus-items">
+                {% for key,val in acf_product.free_bonus_items %}
+                    <div class="item">
+                        <div class="img-data position-relative">
+                            <img src="{{ val.image }}" alt="{{ val.name }}">
+                            <span class="count">{{ cart_items_count }}</span>
+                        </div>
+                        
+                        <h4>{{ val.name }}</h4>
+                        <div class="prices ms-auto">
+                            <span class="default">${{ (val.price * cart_items_count)|number_format(2) }}</span>
+                            <span>FREE</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="total-prices d-none">
+        <div class="d-flex justify-content-between total"><p class="total">Total Value: </p> <p class="price">{{ cart_total|raw }}</p></div>
+        <div class="d-flex justify-content-between cost"><p class="total">Cost: </p> <p class="price">$147.00</p></div>
+        <div class="d-flex justify-content-between savings"><p class="total">Savings: </p> <p class="price">$262.96</p></div>
+        <div class="d-flex justify-content-between shipping"><p class="total">Shipping: </p> <p class="price">FREE</p></div>
+    </div>
+</div>

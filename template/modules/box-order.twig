@@ -1,0 +1,52 @@
+<section class="section section-box-order bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="info">
+                    <i class="fa fa-check"></i>
+                    <div class="text">
+                        <h4 class="order_no">Order #{{ do_shortcode('[wfty_order_number]')|raw }}</h4>
+                        <h5 class="userN">Thank you Test</h5>
+                    </div>
+
+                </div>
+                <div class="customer_info">
+                    <h5 class="title mb-3">Customer Information</h5>
+                    <div class="content">
+                        {{ do_shortcode('[wfty_customer_details]')|raw }}
+                    </div>
+                    <p>A confirmation email with your order information will be emailed to: in 10-30 minutes</p>
+
+                </div>
+                <div class="customer_info">
+                    <h5 class="title mb-3">Summary of Orders</h5>
+                    <div class="content">
+                        {{ do_shortcode('[wfty_order_details]')|raw }}
+                    </div>
+
+                </div>
+                <div class="customer_info">
+                    <div class="content content-step">
+                        <div class="item-step">
+                            <img src="{{ site.theme.link }}/dist/images/global/success-1.png" alt="">
+                            <p>The payment should show as <b>“alphalion”</b> on your credit card statement.</p>
+                        </div>
+                        <div class="item-step">
+                            <img src="{{ site.theme.link }}/dist/images/global/success-2.png" alt="">
+                            <p>Please wait <b>30 minutes</b> to receive a confirmation email with your order ID.</p>
+                        </div>
+                        <div class="item-step">
+                            <img src="{{ site.theme.link }}/dist/images/global/success-3.png" alt="">
+                            <p>All orders are processed within <b>1-2 business days</b> when you will receive an email with your tracking number.</p>
+                        </div>
+                        <div class="item-step">
+                            <img src="{{ site.theme.link }}/dist/images/global/success-4.png" alt="">
+                            <p>For support, please contact 24/7: <a href="mailto:info@alphalion.com">info@alphalion.com</a><br> <a href="tel:+18339625742">+1 (833) 962-5742</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

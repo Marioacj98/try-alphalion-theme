@@ -1,0 +1,32 @@
+<section class="section-chekout" >
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="content-title">
+                    <span class="bg-primary">FINISH ORDER</span>
+                    <span class="bg-orange">SUMMARY</span>
+                </div>
+            </div>
+            <div class="col-lg-8" data-aos="fade-right">
+                {% include 'modules/finish-order.twig' %}
+                <div class="d-lg-none d-block">
+                    {% include 'modules/summary.twig' %}
+                </div>
+                {% include 'modules/order-summary.twig' %}
+                {% include 'modules/images-prom.twig' %}
+            </div>
+            <div class="col-lg-4 d-none d-lg-block" data-aos="fade-left">
+                {% include 'modules/summary.twig' %}
+            </div>
+            <div class="col-12">
+                <!-- //AQUI VA EL PLUGIN DE LOS REVIWS -->
+                <div class="title text-lg-center"  data-aos="fade-up">
+                    <h2 style="font-size: 25px; width: 60%; margin: auto; font-family: 'din Regular'; line-height: 29px; text-transform: none; margin-top: 50px;">{{ acf.reviews_title ?? "" }}</h2>
+                </div>
+                <div data-aos="fade-up">
+                    <div id="stamped-main-widget" data-product-id="6596559863870" data-aos="fade-up"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

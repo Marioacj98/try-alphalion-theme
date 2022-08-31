@@ -1,0 +1,34 @@
+<section class="superhuman-test-reviews" >
+        <div class="container">
+        {% for item in acf.custom_reviews %}
+            <div class="review-1 reviews" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-1">
+                        <img src="{{ item.customer_photo }}" alt="Client review">
+                    </div>
+                    <div class="col-md-11">
+                        <h3>{{ item.customer_title }}</h3>
+                    </div>
+                </div>
+                <div class="row citation">
+                    <div class="col-md-12">
+                        <p>“ {{ item.customer_review }} ”</p>
+                        <div class="divider-review"></div>
+                        <p class="results">*{{ item.customer_mark }}</p>
+                    </div>
+                </div>
+                <div class="row stars">
+                    <div class="col-md-12">
+                        <img src="http://mariocuetoj.com/wp-content/uploads/2022/08/star.svg" alt="Star">
+                        <img src="http://mariocuetoj.com/wp-content/uploads/2022/08/star.svg" alt="Star">
+                        <img src="http://mariocuetoj.com/wp-content/uploads/2022/08/star.svg" alt="Star">
+                        <img src="http://mariocuetoj.com/wp-content/uploads/2022/08/star.svg" alt="Star">
+                        <img src="http://mariocuetoj.com/wp-content/uploads/2022/08/star.svg" alt="Star">
+                        <p class="client-name">{{ item.customer_name }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div id="stamped-main-widget" data-product-id="{{ acf.stamped_product_id }}" data-aos="fade-up"></div>
+        </div>
+    </section>

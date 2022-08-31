@@ -1,0 +1,11 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="superhuman-test quiz">
+	<div class="container" data-aos="fade-up">
+    	{{ do_shortcode(acf.shortcode_form)|raw }}
+    </div>
+</div>
+
+
+{% endblock %}

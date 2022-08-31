@@ -1,0 +1,35 @@
+<section class="single-text-steps bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 m-auto">
+                <div class="title text-lg-center"  data-aos="fade-up">
+                    <h3>{{ acf.intro_text }}</h3>
+                    <h2>{{ acf.title }}</h2>
+                    <p>{{ acf.subtitle }}</p>
+                </div>
+                <div class="steps" data-aos="fade-up">
+                    <ol>
+                        {% for item in acf.steps %}
+                            <li><a class="item" href="#{{ item.title_step|replace({' ': ''})|lower }}">{{ item.title_step }}</a></li>
+                        {% endfor %}
+                    </ol>
+                </div>
+                {{ acf.content|raw }}
+                <div class="content-image" data-aos="fade-up" >
+                    <img src="{{ acf.icons }}" alt="{{ acf.title }}">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid d-block d-lg-none p-0">
+        <div class="col-12">
+            <div class="content-image content-image--full">
+                <img src="{{ site.theme.link }}/dist/images/global/image-1.1.png" alt="">
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% include 'modules/section-step.twig' %}

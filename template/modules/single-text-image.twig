@@ -1,0 +1,18 @@
+<section class="single-text-image bg-white pb-0">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 p-0 d-none d-lg-block">
+                <div class="content-image">
+                    <img src="{{ acf.image }}" alt="{{ acf.title }}">
+                </div>
+
+            </div>
+            <div class="col-lg-5">
+                <div class="title">
+                    <h2>{{ acf.title|raw }}</h2>
+                    {{ acf.content|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
