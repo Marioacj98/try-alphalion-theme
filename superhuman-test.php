@@ -32,7 +32,8 @@ class SuperhumanTest extends BaseClass
                 "post" => get_post(),
                 "cart_total" => $cart_total,
                 "acf" => $acf,
-                "modules" => get_field('content', get_post()->ID)
+                "modules" => get_field('content', get_post()->ID),
+                "post_slug" => $post->post_name
             ),
             $styles,
             $scripts
