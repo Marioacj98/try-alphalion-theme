@@ -25,7 +25,8 @@ class Index extends BaseClass
                 "title" => "HOLA",
                 "sidebar_class" => "clas de ejemplo",
                 "post" => get_post(),
-                "modules" => get_field('content', get_post()->ID)
+                "modules" => get_field('content', get_post()->ID),
+                "post_slug" => $post->post_name
             ),
             $styles,
             $scripts

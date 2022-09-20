@@ -20,7 +20,7 @@
         <title>Superhuman Test</title>
         {{wp_head()}}
     </head>
-    <body class="{{ body_class }}">
+    <body class="{{ body_class }} {{ post_slug }}">
         <!-- incluimos nuestro template del header --> 
         {% include 'layout/header-superhuman-test.twig' %}
         <main>
